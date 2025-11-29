@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #aaa;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        list-style: upper-roman;
+    }
+
+    a {
+        color: #333;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        max-width: 768px;
+    }
+
+
+    section[role="navigation"] {
+        align-items: start;
+        margin-left:6em;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #333;
+    }
+}
