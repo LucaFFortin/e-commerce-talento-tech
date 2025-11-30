@@ -15,7 +15,7 @@ Prueba la aplicación a traves de este enlace:
 | Home Page | Carrito de Compras |
 |:---:|:---:|
 | ![Home](./images/inicio.png) | ![Carrito](./images/carrito.png) |
-*(Reemplaza estos links con las rutas de tus propias imágenes, ej: `./assets/screenshot1.png`)*
+| ![Productos](./images/productos.png)| ![Movil](./images/Movil.png)|
 
 ---
 
