@@ -2,7 +2,6 @@ let formulario = document.querySelector('form')
 let nombre = document.querySelector('#name')
 let email = document.querySelector('#email')
 let mensaje = document.querySelector('#message')
-console.log(nombre, email, mensaje)
 
 
 function validar_entrada () {

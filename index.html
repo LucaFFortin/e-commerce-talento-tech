@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lurr's PC - Tu tienda en línea para computadoras de alta calidad. Encuentra la PC perfecta para tus necesidades, desde uso diario hasta gaming de alto rendimiento.">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="./images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -34,7 +38,7 @@
         <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./pages/productos.html">Productos</a></li>
+                <li><a href="#productos">Productos</a></li>
                 <li><a href="./pages/carrito.html">Carrito</a></li>
             </ul>
         </nav>
@@ -48,31 +52,31 @@
                 <p>Tenemos Computadoras para todos los presupuestos</p>
             </footer>
         </section>
-        <section class="productos">
+        <section id="productos" class="productos">
             <h2>Productos</h2>
             <div class="contenedor-productos">
-                <article>
+                <article class="product">
                     <h3>Pc de oficina</h3>
                     <p>Util computadora para uso diario</p>
-                    <strong>ARS 200.000</strong>
+                    <strong>ARS 200000</strong>
                     <img src="./images/Pc-oficina.webp" alt="Pc Gama de entrada">
                 </article>
-                <article>
+                <article class="product">
                     <h3>Pc Gama de Entrada</h3>
                     <p>Perfecta para adentrarse en el mundo de los videojuegos</p>
-                    <strong>ARS 500.000</strong>
+                    <strong>ARS 500000</strong>
                     <img src="./images/pc-entrada.webp" alt="Pc Gama de entrada">
                 </article>
-                <article>
+                <article class="product">
                     <h3>Pc Gama Media</h3>
                     <p>Mejor costo/beneficio para jugar</p>
-                    <strong>ARS 1.000.000</strong>
+                    <strong>ARS 1000000</strong>
                     <img src="./images/pc-media.webp" alt="Pc Gama media">
                 </article>
-                <article>
+                <article class="product">
                     <h3>Pc Gama Alta</h3>
                     <p>Pc potente y duradera, util para jugar y trabajar</p>
-                    <strong>ARS 2.200.000</strong>
+                    <strong>ARS 2200000</strong>
                     <img src="./images/pc gama alta.avif" alt="Pc Gama alta">
                 </article>
             </div>
@@ -102,5 +106,6 @@
         <button><a href="./pages/contacto.html">Contacto</a></button>
         <button><a href="./pages/terminos.html">Terminos y condiciones</a></button>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
