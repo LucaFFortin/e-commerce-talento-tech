@@ -15,7 +15,7 @@ Prueba la aplicación a traves de este enlace:
 | Home Page | Carrito de Compras |
 |:---:|:---:|
 | ![Home](./images/inicio.png) | ![Carrito](./images/carrito.png) |
-| ![Productos](./images/productos.png)| ![Movil](./images/Movil.png)|
+| ![Productos](./images/productos.png)| ![Movil](./images/movil.png)|
 
 ---
 
