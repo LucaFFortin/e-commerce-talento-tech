@@ -38,6 +38,7 @@ carrito.forEach(item => {
     }).format(precio)
 
     let articulo = document.createElement('article')
+    articulo.setAttribute('tabindex', '0')
     articulo.classList.add('product')
     articulo.innerHTML = `
         <h3>${titulo}</h3>
@@ -78,5 +79,37 @@ carrito.forEach(item => {
     })
     
     contenedor.appendChild(articulo)
+
+    articulo.addEventListener('keydown', (event) => {
+
+        if (event.key !== 'Enter') return;
+        carrito = carrito.filter(prod => {
+            return prod.titulo !== titulo
+        })
+        contenedor.removeChild(articulo)
+        
+        contenedorBotones.removeChild(contenedorBotones.lastChild)
+
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+        // location.reload()
+
+        cantidadProductos = carrito.length
+        preciototal = carrito.reduce((total, item) => {
+            let precioNum = parseFloat(item.precio.replace('ARS ', '').replace('.', '').replace(',', '.').trim())
+        console.log(precioNum, total);
+            return total + precioNum
+        }, 0)
+
+        totalElemento = document.createElement('div')
+        totalElemento.classList.add('total-carrito')
+        totalElemento.innerHTML = `
+            <h3>Cantidad de productos: ${cantidadProductos}</h3>
+            <h3>Precio total: ARS ${preciototal.toLocaleString('es-AR')}</h3>
+        `
+
+        contenedorBotones.appendChild(totalElemento)
+        
+    })
+    
 
 });
