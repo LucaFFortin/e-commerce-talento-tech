@@ -73,8 +73,8 @@ Si deseas correr este proyecto en tu computadora, sigue estos pasos:
        └── Carrito/     # Carrito de la tienda
        └── Contacto/    # Formulario de contacto
        └── Terminos/    # Terminos y condiciones
-   ├── styles.css       # Hoja de estilos principal
-   ├── script.js        # Lógica de la tienda
+   ├── css/             # CSS de las paginas
+   ├── js/              # Scripts de las paginas
    ├── index.html       # Página principal
    ├── LICENCE          # Licencia del Software
    └── README.md        # Documentación
