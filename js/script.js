@@ -301,7 +301,7 @@ productos.forEach(producto => {
     const id = Number(producto.attributes[2].value)
 
     boton.addEventListener('click', () => {
-        let producto = data[id]
+        let producto = data[id - 1]
             
         carrito.push(producto)
         localStorage.setItem('carrito', JSON.stringify(carrito))
