@@ -4,8 +4,6 @@ main {
     justify-content: center;
     align-items: center;
 
-    background-color: #aaa;
-
     ul {
         display: flex;
         flex-direction: column;
@@ -37,7 +35,6 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         border-bottom: 1px solid #333;
     }
 }
