@@ -15,7 +15,8 @@ Prueba la aplicación a traves de este enlace:
 | Home Page | Carrito de Compras |
 |:---:|:---:|
 | ![Home](./images/inicio.png) | ![Carrito](./images/carrito.png) |
-*(Reemplaza estos links con las rutas de tus propias imágenes, ej: `./assets/screenshot1.png`)*
+| Productos | Vista de movil |
+| ![Productos](./images/productos.png)| ![Movil](./images/movil.png)|
 
 ---
 
@@ -62,24 +63,24 @@ Si deseas correr este proyecto en tu computadora, sigue estos pasos:
    Simplemente abre el archivo index.html en tu navegador web favorito.
    O usa la extensión "Live Server" en VS Code.
 
---
+---
 
 ## 📂 Estructura del Proyecto
+   ```text
+   e-commerce-talento-tech/
+   ├── images/          # Imágenes y recursos estáticos
+   ├── pages/           # Paginas de la tienda
+       └── Carrito/     # Carrito de la tienda
+       └── Contacto/    # Formulario de contacto
+       └── Terminos/    # Terminos y condiciones
+   ├── styles.css       # Hoja de estilos principal
+   ├── script.js        # Lógica de la tienda
+   ├── index.html       # Página principal
+   ├── LICENCE          # Licencia del Software
+   └── README.md        # Documentación
+   ```
 
-e-commerce-talento-tech/
-├── images/          # Imágenes y recursos estáticos
-├── pages/           # Paginas de la tienda
-    └── Carrito/     # Carrito de la tienda
-    └── Contacto/    # Formulario de contacto
-    └── Terminos/    # Terminos y condiciones
-├── styles.css       # Hoja de estilos principal
-├── script.js        # Lógica de la tienda
-├── index.html       # Página principal
-├── LICENCE          # Licencia del Software
-└── README.md        # Documentación
-
-
---
+---
 
 ## ✒️ Autor: Luca Fortin
 
