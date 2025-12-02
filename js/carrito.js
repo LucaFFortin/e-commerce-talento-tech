@@ -5,7 +5,17 @@ const PRECIO_DOLAR = 1500
 console.log(carrito)
 
 function obtenerPrecioVisual (price) {
-    return (price * PRECIO_DOLAR).toLocaleString("de-DE")
+    return (price).toLocaleString("de-DE")
+}
+
+function calcularTotalCarrito() {
+    let totalCarrito = (carrito.reduce((total, item) => {
+        console.log(item)
+        let precioNum = parseFloat(item.price * 1000)
+        return total + precioNum
+    }, 0))
+
+    return totalCarrito
 }
 
 clearCart.addEventListener('click', () => {
@@ -15,9 +25,9 @@ clearCart.addEventListener('click', () => {
 
 let cantidadProductos = carrito.length
 
-let totalCarrito = Number(carrito.reduce((total, item) => {
+let totalCarrito = (carrito.reduce((total, item) => {
     console.log(item)
-    let precioNum = parseFloat(item.price)
+    let precioNum = parseFloat(item.price * 1000)
     return total + precioNum
 }, 0))
 
@@ -25,7 +35,7 @@ let totalElemento = document.createElement('div')
 totalElemento.classList.add('total-carrito')
 totalElemento.innerHTML = `
     <h3>Cantidad de productos: ${cantidadProductos}</h3>
-    <h3>Precio total: $${obtenerPrecioVisual(totalCarrito)}</h3>
+    <h3>Precio total: $ ${obtenerPrecioVisual(calcularTotalCarrito())}</h3>
 `
 
 contenedorBotones.appendChild(totalElemento)
@@ -38,8 +48,6 @@ carrito.forEach(item => {
     let precio = item.price
     let imagen = item.image
 
-    let precioPublicacion = obtenerPrecioVisual(precio)
-
     let articulo = document.createElement('article')
     articulo.setAttribute('tabindex', '0')
     articulo.classList.add('producto')
@@ -51,7 +59,7 @@ carrito.forEach(item => {
         </div>
         <div>
             <img src="${imagen}" alt="${titulo}">
-            <h3>$ ${precioPublicacion}</h3>
+            <h3>$ ${precio}</h3>
             <button class="sacar">Eliminar producto</button>
         </div>
     `
@@ -68,23 +76,43 @@ carrito.forEach(item => {
                 console.log(carrito)
                 return producto.id !== id
             })
+            localStorage.setItem('carrito', JSON.stringify(carrito))
             
             contenedor.removeChild(articulo)
             contenedorBotones.removeChild(contenedorBotones.lastChild)
     
             let cantidadProductos = carrito.length
-
-            let totalCarrito = Number(carrito.reduce((total, item) => {
-                console.log(item)
-                let precioNum = parseFloat(item.price)
-                return total + precioNum
-            }, 0))
     
             totalElemento = document.createElement('div')
             totalElemento.classList.add('total-carrito')
             totalElemento.innerHTML = `
                 <h3>Cantidad de productos: ${cantidadProductos}</h3>
-                <h3>Precio total: ${obtenerPrecioVisual(totalCarrito)}</h3>
+                <h3>Precio total: $ ${obtenerPrecioVisual(calcularTotalCarrito())}</h3>
+            `
+    
+            contenedorBotones.appendChild(totalElemento)
+            
+        })
+
+        boton.addEventListener('keydown', (event) => {
+
+            if (event.key !== 'Enter') return;
+            carrito = carrito.filter(producto => {
+                console.log(carrito)
+                return producto.id !== id
+            })
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+            
+            contenedor.removeChild(articulo)
+            contenedorBotones.removeChild(contenedorBotones.lastChild)
+    
+            let cantidadProductos = carrito.length
+    
+            totalElemento = document.createElement('div')
+            totalElemento.classList.add('total-carrito')
+            totalElemento.innerHTML = `
+                <h3>Cantidad de productos: ${cantidadProductos}</h3>
+                <h3>Precio total: $ ${obtenerPrecioVisual(calcularTotalCarrito())}</h3>
             `
     
             contenedorBotones.appendChild(totalElemento)
@@ -92,37 +120,5 @@ carrito.forEach(item => {
         })
     })
     
-    
     contenedor.appendChild(articulo)
-
-    articulo.addEventListener('keydown', (event) => {
-
-        if (event.key !== 'Enter') return;
-        carrito = carrito.filter(prod => {
-            return prod.titulo !== titulo
-        })
-        contenedor.removeChild(articulo)
-        
-        contenedorBotones.removeChild(contenedorBotones.lastChild)
-
-        localStorage.setItem('carrito', JSON.stringify(carrito))
-        // location.reload()
-
-        cantidadProductos = carrito.length
-        preciototal = carrito.reduce((total, item) => {
-            let precioNum = parseFloat(item.precio.replace('ARS ', '').replace('.', '').replace(',', '.').trim())
-        console.log(precioNum, total);
-            return total + precioNum
-        }, 0)
-
-        totalElemento = document.createElement('div')
-        totalElemento.classList.add('total-carrito')
-        totalElemento.innerHTML = `
-            <h3>Cantidad de productos: ${cantidadProductos}</h3>
-            <h3>Precio total: ${preciototal.toLocaleString('es-AR')}</h3>
-        `
-
-        contenedorBotones.appendChild(totalElemento)
-        
-    })
 }); 
