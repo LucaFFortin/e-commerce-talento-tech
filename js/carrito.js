@@ -2,6 +2,8 @@ let contenedorBotones = document.querySelector('.buttons')
 let clearCart = document.getElementById('clearCart')
 let carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
+console.log(carrito)
+
 clearCart.addEventListener('click', () => {
     localStorage.setItem('carrito', JSON.stringify([]))
     location.reload()
@@ -10,7 +12,8 @@ clearCart.addEventListener('click', () => {
 let cantidadProductos = carrito.length
 
 let preciototal = carrito.reduce((total, item) => {
-    let precioNum = parseFloat(item.precio.replace('ARS ', '').replace('.', '').replace(',', '.').trim())
+    console.log(item)
+    let precioNum = parseFloat(String(item.price).replace('ARS ', '').replace('.', '').replace(',', '.').trim())
     console.log(precioNum, total);
     return total + precioNum
 }, 0)
