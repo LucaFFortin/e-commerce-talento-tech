@@ -27,21 +27,23 @@ footer button {
     transition: all 0.3s ease;
 }
 
+button[id="buyCart"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 button[id="clearCart"], button[class="sacar"] {
     background-color: #e73241;
     border: 1px solid red;
 }
 
-button[id="buyCart"]:hover, button[id="buyCart"]:focus   {
-    background-color: #0056b3;
-}
 
 button[id="clearCart"]:hover, button[id="clearCart"]:focus,
 button[class="sacar"]:hover, button[class="sacar"]:focus {
     background-color: #c12735;
 }
 
-button:active {
+button[id="clearCart"]:active, button[class="sacar"]:active {
     transform: scale(0.98);
 }
 
