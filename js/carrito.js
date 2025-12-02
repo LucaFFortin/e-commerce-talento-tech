@@ -19,7 +19,7 @@ let totalElemento = document.createElement('div')
 totalElemento.classList.add('total-carrito')
 totalElemento.innerHTML = `
     <h3>Cantidad de productos: ${cantidadProductos}</h3>
-    <h3>Precio total: ARS ${preciototal.toLocaleString('es-AR')}</h3>
+    <h3>Precio total: $${preciototal.toLocaleString('es-AR')}</h3>
 `
 
 contenedorBotones.appendChild(totalElemento)
@@ -71,7 +71,7 @@ carrito.forEach(item => {
         totalElemento.classList.add('total-carrito')
         totalElemento.innerHTML = `
             <h3>Cantidad de productos: ${cantidadProductos}</h3>
-            <h3>Precio total: ARS ${preciototal.toLocaleString('es-AR')}</h3>
+            <h3>Precio total: ${preciototal.toLocaleString('es-AR')}</h3>
         `
 
         contenedorBotones.appendChild(totalElemento)
@@ -104,7 +104,7 @@ carrito.forEach(item => {
         totalElemento.classList.add('total-carrito')
         totalElemento.innerHTML = `
             <h3>Cantidad de productos: ${cantidadProductos}</h3>
-            <h3>Precio total: ARS ${preciototal.toLocaleString('es-AR')}</h3>
+            <h3>Precio total: ${preciototal.toLocaleString('es-AR')}</h3>
         `
 
         contenedorBotones.appendChild(totalElemento)

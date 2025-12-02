@@ -6,11 +6,13 @@ main {
 
     > footer {
         display: flex;
-        gap: 2em;
+        gap: 1em;
         margin-bottom: 1em;
         background-color: #83aedb;
-        padding: 10px;
+        padding: 10px 20px;
         border-radius: 3px;
+        margin-top: auto;
+
     }
 }
 
@@ -18,10 +20,28 @@ footer button {
     padding: 0.5em 1em;
     background-color: #007BFF;
     color: white;
-    border: none;
+    border: 1px solid rgb(0, 153, 255);
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+button[id="clearCart"] {
+    background-color: #e73241;
+    border: 1px solid red;
+}
+
+button[id="buyCart"]:hover, button[id="buyCart"]:focus   {
+    background-color: #0056b3;
+}
+
+button[id="clearCart"]:hover, button[id="clearCart"]:focus {
+    background-color: #c12735;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 body{
@@ -32,4 +52,16 @@ body{
 
 main {
     flex-grow: 1;
+}
+
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    body footer small {
+        text-align: center;
+    }
 }
